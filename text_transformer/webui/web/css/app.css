@@ -1,0 +1,18 @@
+body {
+  height: calc(100vh - 20px);
+  padding: 10px;
+}
+
+form {
+  display: contents;
+}
+
+/* Fix uikit icons becoming miniscule when wrapped in flexbox */
+svg {
+  max-width: initial;
+}
+
+/* Disable textarea resizing */
+textarea {
+  resize: none;
+}

@@ -6,6 +6,7 @@ authors = ["Stelios Karabasakis <skarabasakis@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+Eel = "^0.14.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

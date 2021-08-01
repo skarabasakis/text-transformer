@@ -1,5 +1,4 @@
 __version__ = '0.1.0'
 
-from . import transformers
+from .app import main
 
-__all__ = ['transformers']

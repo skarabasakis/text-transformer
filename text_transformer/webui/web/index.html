@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Text Transformer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Pylon https://almonk.github.io/pylon/ -->
+    <link rel="stylesheet" href="css/pylon.css">
+
+    <!-- UIKit https://getuikit.com/ -->
+    <link rel="stylesheet" href="css/uikit.css">
+    <script type="text/javascript" src="js/uikit.js"></script>
+    <script type="text/javascript" src="js/uikit-icons.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+
+  <body onload="load_transformers()">
+    <form onsubmit="transform(event)">
+      <vstack stretch spacing="xxs">
+        <hstack spacing="s">
+          <label class="uk-form-label" for="transformer">Select a transformer:</label>
+          <select id="transformer-select" name="transformer" class="uk-select
+            uk-form-width-medium">
+            <option selected></option>
+          </select>
+        </hstack>
+        <vstack>
+          <hstack stretch spacing="s">
+            <textarea stretch name="text-input" placeholder="Enter your text"
+              class="uk-textarea" id="input-textarea"></textarea>
+            <vstack spacing="xxs">
+              <button type="submit" class="uk-button uk-button-primary"><i uk-icon="play"></i></button>
+              <button type="reset" class="uk-button uk-button-danger"><i uk-icon="trash"></i></button>
+            </vstack>
+            <textarea stretch name="text-output" class="uk-textarea" disabled
+              id="output-textarea"></textarea>
+          </hstack>
+        </vstack>
+      </vstack>
+    </form>
+
+    <script>
+    async function load_transformers() {
+      const transformers = await eel.get_transformers()();
+      const select = document.getElementById('transformer-select');
+      for (let transformer of transformers) {
+        let option = document.createElement('option');
+        option.value = option.text = transformer;
+        select.appendChild(option);
+      }
+    }
+
+    async function transform(event) {
+      event.preventDefault();
+      const transformer_name = document.getElementById('transformer-select').value;
+      const input_text = document.getElementById('input-textarea').value;
+      const output_text = await eel.transform(input_text, transformer_name)();
+      document.getElementById('output-textarea').value = output_text;
+    }
+  </script>
+  </body>
+
+</html>
