@@ -5,18 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "text_transformer.webui",
+            "name": "webui",
             "type": "python",
             "request": "launch",
-            "module": "text_transformer.webui",
-            "justMyCode": false
+            "module": "text_transformer.frontends.webui",
         },
         {
-            "name": "text_transformer.tkui",
+            "name": "tkui",
             "type": "python",
             "request": "launch",
-            "module": "text_transformer.tkui",
-            "justMyCode": false
+            "module": "text_transformer.frontends.tkui",
         }
     ]
 }

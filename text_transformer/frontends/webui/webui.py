@@ -11,4 +11,4 @@ def transform(text, transformer_name):
 
 def run():
     eel.init('data/webui')
-    eel.start('index.html', mode=None, port=9090)
+    eel.start('index.html', port=9090)
