@@ -175,6 +175,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "pygubu"
+version = "0.12"
+description = "A tkinter GUI builder."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyparsing"
 version = "2.4.7"
 description = "Python parsing module"
@@ -248,7 +256,7 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "3cd091f4f95cc1343930533760bb7a4bd53c4ba6aa948576af97828fb052a1dd"
+content-hash = "e7a01e74d25cc57385903e2cb39b20c22a1648ea26fd1f311c63bd40eced31ae"
 
 [metadata.files]
 atomicwrites = [
@@ -427,6 +435,10 @@ py = [
 pycparser = [
     {file = "pycparser-2.20-py2.py3-none-any.whl", hash = "sha256:7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"},
     {file = "pycparser-2.20.tar.gz", hash = "sha256:2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"},
+]
+pygubu = [
+    {file = "pygubu-0.12-py3-none-any.whl", hash = "sha256:3d05738e913e4566a139317a6a45051dd6108c48049701bf3340ec76f3e7a94f"},
+    {file = "pygubu-0.12.tar.gz", hash = "sha256:6c1a66866a4bdfaf5dc451a2687786ae558a563b0dbef1381bcdeb5a2e45174d"},
 ]
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},

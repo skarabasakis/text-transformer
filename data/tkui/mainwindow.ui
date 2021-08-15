@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.1">
+  <object class="tk.Toplevel" id="main_window">
+    <property name="geometry">800x480</property>
+    <property name="height">200</property>
+    <property name="resizable">both</property>
+    <property name="title" translatable="yes">Text Transformer</property>
+    <property name="width">200</property>
+    <child>
+      <object class="ttk.Frame" id="top_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="expand">false</property>
+          <property name="fill">both</property>
+          <property name="propagate">True</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="transformer_label">
+            <property name="anchor">n</property>
+            <property name="text" translatable="yes">Select a transformer:</property>
+            <layout manager="pack">
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.OptionMenu" id="transformer_option_menu">
+            <property name="values">silence,leetify,jumble,ransomize</property>
+            <property name="variable">string:transformer_option</property>
+            <layout manager="pack">
+              <property name="expand">true</property>
+              <property name="fill">x</property>
+              <property name="padx">5</property>
+              <property name="pady">5</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="bottom_frame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="expand">true</property>
+          <property name="fill">both</property>
+          <property name="padx">5</property>
+          <property name="pady">5</property>
+          <property name="propagate">True</property>
+          <property name="side">bottom</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="input_text">
+            <property name="height">10</property>
+            <property name="undo">true</property>
+            <property name="width">15</property>
+            <property name="wrap">word</property>
+            <layout manager="pack">
+              <property name="expand">true</property>
+              <property name="fill">both</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Frame" id="buttons_frame">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="expand">false</property>
+              <property name="fill">y</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+            <child>
+              <object class="tk.Button" id="transform_button">
+                <property name="command" type="command" cbtype="simple">transform_button_clicked</property>
+                <property name="text" translatable="yes">Transform</property>
+                <layout manager="pack">
+                  <property name="expand">false</property>
+                  <property name="fill">x</property>
+                  <property name="propagate">True</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Button" id="clear_button">
+                <property name="command" type="command" cbtype="simple">clear_button_clicked</property>
+                <property name="text" translatable="yes">Clear</property>
+                <layout manager="pack">
+                  <property name="expand">false</property>
+                  <property name="fill">x</property>
+                  <property name="propagate">True</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Text" id="output_text">
+            <property name="height">10</property>
+            <property name="undo">false</property>
+            <property name="width">15</property>
+            <property name="wrap">word</property>
+            <layout manager="pack">
+              <property name="expand">true</property>
+              <property name="fill">both</property>
+              <property name="propagate">True</property>
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

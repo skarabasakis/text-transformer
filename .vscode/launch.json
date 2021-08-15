@@ -10,6 +10,13 @@
             "request": "launch",
             "module": "text_transformer.webui",
             "justMyCode": false
+        },
+        {
+            "name": "text_transformer.tkui",
+            "type": "python",
+            "request": "launch",
+            "module": "text_transformer.tkui",
+            "justMyCode": false
         }
     ]
 }
