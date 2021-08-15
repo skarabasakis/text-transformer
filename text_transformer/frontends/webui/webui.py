@@ -7,7 +7,7 @@ def get_transformers():
 
 @eel.expose
 def transform(text, transformer_name):
-    return getattr(transformers, transformer_name)(text)
+    return transformers.transform(text, transformer_name)
 
 def run():
     eel.init('data/webui')

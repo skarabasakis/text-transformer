@@ -2,10 +2,7 @@ import os
 import tkinter as tk
 import tkinter.ttk as ttk
 import pygubu
-from text_transformer import transformers
-
-def transform(text, transformer_name):
-    return getattr(transformers, transformer_name)(text)
+from text_transformer.transformers import transform
 
 def transform_button_clicked(gui):
     transformer_option = gui.get_variable('transformer_option').get()
