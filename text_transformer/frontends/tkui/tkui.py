@@ -2,7 +2,12 @@ import os
 import tkinter as tk
 import tkinter.ttk as ttk
 import pygubu
+import pygubu.builder
+import pygubu.builder.tkstdwidgets
+import pygubu.builder.ttkstdwidgets
+from text_transformer.config import ROOT_DIR
 from text_transformer.transformers import transform
+
 
 def transform_button_clicked(gui):
     transformer_option = gui.get_variable('transformer_option').get()
@@ -21,7 +26,7 @@ def clear_button_clicked(gui):
 def run():
     global gui
     gui = pygubu.Builder()
-    gui.add_from_file('data/tkui/mainwindow.ui')
+    gui.add_from_file(f'{ROOT_DIR}/data/tkui/mainwindow.ui')
     window = gui.get_object('main_window')
     gui.connect_callbacks({
         'transform_button_clicked': lambda: transform_button_clicked(gui),
